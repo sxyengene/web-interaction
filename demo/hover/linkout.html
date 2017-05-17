@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<style>
+html{
+
+}
+.demo{
+	margin-left: 500px;
+}
+
+.show{
+	transition: opacity 1s 1s;
+	opacity:1;
+}
+a{
+    font-size: 14px;
+    letter-spacing: 2px;
+    display: inline-block;
+    position: relative;
+    transform: translateX(-50%);
+    color: red;
+    transition: opacity 1s 5s;
+    opacity: 0;
+    background-color: transparent;
+}
+a:after {
+    height: 1px;
+    position: absolute;
+    content: " ";
+    background: #000;
+    top: 50%;
+    margin-top: 1px;
+    animation: linkout .3s forwards;
+}
+a:hover:after {
+    animation: linkin .3s forwards;
+}
+
+
+@keyframes linkin {
+    0% {
+        width: 0;
+        left: -20%;
+        opacity: 1
+    }
+
+    to {
+        width: 120%;
+        left: -10%;
+        opacity: 1
+    }
+}
+@keyframes linkout {
+    0% {
+        width: 120%;
+        left: -10%;
+        opacity: 1
+    }
+
+    99% {
+        width: 0;
+        left: 120%;
+        opacity: 1
+    }
+
+    to {
+        width: 0;
+        left: 120%;
+        opacity: 0
+    }
+}
+
+</style>
+<div class="demo">
+	<a class="btn" href="">enter space the room</a>
+</div>
+
+<script>
+setTimeout(function(){
+	document.querySelector('.btn').classList.add('show');
+},100)
+</script>
+
+</body>
+</html>
