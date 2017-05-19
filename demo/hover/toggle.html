@@ -71,7 +71,14 @@
 	.toggle--open .toggle__bar:nth-child(3){transform:rotate(135deg)
 	}
 
-
+	.test{
+		margin-left: 500px;
+		margin-top: 500px;
+		width: 20px;
+		height: 20px;
+		background-color: red;
+		border:3px solid green;
+	}
 </style>
 
 <a class="toggle">
@@ -80,5 +87,21 @@
 	<span class="toggle__bar"></span>
 	<span class="toggle__bar"></span>
 </a>
+
+<div class="test">
+	
+</div>
+<script>
+	function toggleClick(){
+		var classL = document.querySelector('.toggle').classList;
+		if(classL.contains('toggle--open')){
+			this.classList.remove('toggle--open');
+		}else{
+			this.classList.add('toggle--open');
+		}
+	}
+
+	document.querySelector('.toggle').addEventListener('click',toggleClick);
+</script>
 </body>
 </html>
